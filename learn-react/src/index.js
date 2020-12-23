@@ -8,39 +8,24 @@ function ListItems() {
   return (
     <section className="itemList">
       <Items />
-      <Items />
-      <Items />
-      <Items />
-      <Items />
-      <Items />
-      <Items />
-      <Items />
     </section>
   );
 }
 
 const Items = () => {
+  const name = "Acer Monitor";
+  const price = "Rs: 1568";
   return (
     <article className="items">
-      <Image />
-      <ItemName />
-      <Price />
+      <img
+        src="https://rukminim1.flixcart.com/image/150/150/k0463rk0/monitor/n/6/b/v206hql-v206hql-acer-original-imafjzemapccwgby.jpeg?q=70"
+        alt="something"
+      ></img>
+      <h4>{name.toLocaleUpperCase()}</h4>
+      <p>{price}</p>
     </article>
   );
 };
-const ItemName = () => {
-  return <h4>Item</h4>;
-};
-const Image = () => (
-  <img
-    src="https://rukminim1.flixcart.com/image/150/150/k0463rk0/monitor/n/6/b/v206hql-v206hql-acer-original-imafjzemapccwgby.jpeg?q=70"
-    alt="something"
-  ></img>
-);
-const Price = () => (
-  // Inline-css
-  <p style={{ color: "yellowgreen", marginTop: "0.25rem" }}>Rs:556.50</p>
-);
 
 // Components
 // const Name = () => <p>Sandeep Sharma</p>;
