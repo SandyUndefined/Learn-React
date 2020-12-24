@@ -57,12 +57,15 @@ function ListItems() {
   );
 }
 // Nestetd Components
-const Items = (props) => {
+// Destructring { img, name, price }
+const Items = ({ img, name, price }) => {
+  // another way to deal with props
+  // const { img, name, price } = props;
   return (
     <article className="items">
-      <img className="products" src={props.img}></img>
-      <h4>{props.name.toLocaleUpperCase()}</h4>
-      <p>{props.price}</p>
+      <img className="products" src={img}></img>
+      <h4>{name}</h4>
+      <p>{price}</p>
     </article>
   );
 };
