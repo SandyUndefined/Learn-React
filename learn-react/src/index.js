@@ -33,11 +33,14 @@ const fourthItem = {
 function ListItems() {
   return (
     <section className="itemList">
-      <Items
-        img={firstItem.img}
-        name={firstItem.name}
-        price={firstItem.price}
-      />
+      <Items img={firstItem.img} name={firstItem.name} price={firstItem.price}>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+          commodi deserunt corrupti error fugit praesentium odit hic facilis,
+          rerum accusantium consequuntur culpa expedita maxime natus, quis,
+          tempora distinctio? Hic, aliquam.
+        </p>
+      </Items>
       <Items
         img={secondItem.img}
         name={secondItem.name}
@@ -58,7 +61,7 @@ function ListItems() {
 }
 // Nestetd Components
 // Destructring { img, name, price }
-const Items = ({ img, name, price }) => {
+const Items = ({ img, name, price, children }) => {
   // another way to deal with props
   // const { img, name, price } = props;
   return (
@@ -66,6 +69,7 @@ const Items = ({ img, name, price }) => {
       <img className="products" src={img}></img>
       <h4>{name}</h4>
       <p>{price}</p>
+      {children}
     </article>
   );
 };
