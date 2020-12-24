@@ -3,26 +3,66 @@ import ReactDom from "react-dom";
 // css
 import "./index.css";
 
-// Nested Components
+// variables
+const firstItem = {
+  img:
+    "https://rukminim1.flixcart.com/image/150/150/k0463rk0/monitor/n/6/b/v206hql-v206hql-acer-original-imafjzemapccwgby.jpeg?q=70",
+  name: "Acer Monitor",
+  price: "Rs: 1568",
+};
+const secondItem = {
+  img:
+    "https://rukminim1.flixcart.com/image/312/312/kbcjpu80/monitor/h/w/f/22y-1px47aa-hp-original-imafspusqgzjvfuw.jpeg?q=70",
+  name: "HP Monitor",
+  price: "Rs: 2000",
+};
+const thirdItem = {
+  img:
+    "https://rukminim1.flixcart.com/image/312/312/kbcjpu80/monitor/h/w/f/22y-1px47aa-hp-original-imafspusqgzjvfuw.jpeg?q=70",
+  name: "LG Monitor",
+  price: "Rs: 1000",
+};
+const fourthItem = {
+  img:
+    "https://rukminim1.flixcart.com/image/312/312/kbcjpu80/monitor/h/w/f/22y-1px47aa-hp-original-imafspusqgzjvfuw.jpeg?q=70",
+  name: "AOC Monitor",
+  price: "Rs: 1500",
+};
+
+// Main components
 function ListItems() {
   return (
     <section className="itemList">
-      <Items />
+      <Items
+        img={firstItem.img}
+        name={firstItem.name}
+        price={firstItem.price}
+      />
+      <Items
+        img={secondItem.img}
+        name={secondItem.name}
+        price={secondItem.price}
+      />
+      <Items
+        img={thirdItem.img}
+        name={thirdItem.name}
+        price={thirdItem.price}
+      />
+      <Items
+        img={fourthItem.img}
+        name={fourthItem.name}
+        price={fourthItem.price}
+      />
     </section>
   );
 }
-
-const Items = () => {
-  const name = "Acer Monitor";
-  const price = "Rs: 1568";
+// Nestetd Components
+const Items = (props) => {
   return (
     <article className="items">
-      <img
-        src="https://rukminim1.flixcart.com/image/150/150/k0463rk0/monitor/n/6/b/v206hql-v206hql-acer-original-imafjzemapccwgby.jpeg?q=70"
-        alt="something"
-      ></img>
-      <h4>{name.toLocaleUpperCase()}</h4>
-      <p>{price}</p>
+      <img className="products" src={props.img}></img>
+      <h4>{props.name.toLocaleUpperCase()}</h4>
+      <p>{props.price}</p>
     </article>
   );
 };

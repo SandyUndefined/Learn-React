@@ -25,3 +25,7 @@ body {
 .items h4 {
   margin-top: 0.5rem;
 }
+.products {
+  width: 230px;
+  height: 150px;
+}
