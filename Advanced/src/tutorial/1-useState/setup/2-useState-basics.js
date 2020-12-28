@@ -1,5 +1,11 @@
 import React, { Fragment, useState } from "react";
 
+// Genral rule
+// Always use
+// component name must be uppercase
+// must be in the function/component body
+// cannot call conditionally
+
 const UseStateBasics = () => {
   const [initialName, setName] = useState("SandyUndefined");
   const clickEvent = () => {
