@@ -57,12 +57,34 @@ function ListItems() {
 // Destructring { img, name, price }
 const Items = (props) => {
   // another way to deal with props
+  // attribute, eventHandler
+  // onClick, onMouseOver
+  const clickhandler = (e) => {
+    console.log(e);
+    console.log(e.target);
+    alert("This is my page");
+  };
+  const complexHandler = (name) => {
+    console.log(name);
+  };
   const { img, name, price } = props;
   return (
-    <article className="items">
+    // inLine event handlers
+    <article
+      className="items"
+      onMouseOver={() => {
+        console.log(img);
+      }}
+    >
       <img className="products" src={img} alt=""></img>
-      <h4>{name}</h4>
+      <h4 onClick={() => console.log(name)}>{name}</h4>
       <p>{price}</p>
+      <button type="button" onClick={clickhandler}>
+        OnClick
+      </button>
+      <button type="button" onClick={() => complexHandler(name)}>
+        Complex Example
+      </button>
     </article>
   );
 };
