@@ -6,30 +6,35 @@ import "./index.css";
 // variables
 const items = [
   {
+    id: 1,
     img:
       "https://rukminim1.flixcart.com/image/150/150/k0463rk0/monitor/n/6/b/v206hql-v206hql-acer-original-imafjzemapccwgby.jpeg?q=70",
     name: "Acer Monitor",
     price: "Rs: 1568",
   },
   {
+    id: 2,
     img:
       "https://rukminim1.flixcart.com/image/312/312/kbcjpu80/monitor/h/w/f/22y-1px47aa-hp-original-imafspusqgzjvfuw.jpeg?q=70",
     name: "HP Monitor",
     price: "Rs: 2000",
   },
   {
+    id: 3,
     img:
       "https://rukminim1.flixcart.com/image/312/312/kbcjpu80/monitor/h/w/f/22y-1px47aa-hp-original-imafspusqgzjvfuw.jpeg?q=70",
     name: "LG Monitor",
     price: "Rs: 1000",
   },
   {
+    id: 4,
     img:
       "https://rukminim1.flixcart.com/image/312/312/kbcjpu80/monitor/h/w/f/22y-1px47aa-hp-original-imafspusqgzjvfuw.jpeg?q=70",
     name: "AOC Monitor",
     price: "Rs: 1500",
   },
   {
+    id: 5,
     img:
       "https://rukminim1.flixcart.com/image/312/312/kbcjpu80/monitor/h/w/f/22y-1px47aa-hp-original-imafspusqgzjvfuw.jpeg?q=70",
     name: "AOC Monitor",
@@ -42,8 +47,8 @@ function ListItems() {
   return (
     <section className="itemList">
       {items.map((item) => {
-        const { img, name, price } = item;
-        return <Items item={item}></Items>;
+        // const { img, name, price } = item;
+        return <Items key={item.id} {...item}></Items>;
       })}
     </section>
   );
@@ -52,10 +57,10 @@ function ListItems() {
 // Destructring { img, name, price }
 const Items = (props) => {
   // another way to deal with props
-  const { img, name, price } = props.item;
+  const { img, name, price } = props;
   return (
     <article className="items">
-      <img className="products" src={img}></img>
+      <img className="products" src={img} alt=""></img>
       <h4>{name}</h4>
       <p>{price}</p>
     </article>
