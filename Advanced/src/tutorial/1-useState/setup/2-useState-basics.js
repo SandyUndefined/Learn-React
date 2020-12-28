@@ -3,7 +3,11 @@ import React, { Fragment, useState } from "react";
 const UseStateBasics = () => {
   const [initialName, setName] = useState("SandyUndefined");
   const clickEvent = () => {
-    setName("Sandeep Sharma");
+    if (initialName == "SandyUndefined") {
+      setName("Sandeep Sharma");
+    } else {
+      setName("SandyUndefined");
+    }
   };
   return (
     <React.Fragment>
