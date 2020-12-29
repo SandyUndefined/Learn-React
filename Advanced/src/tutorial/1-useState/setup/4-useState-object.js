@@ -7,7 +7,11 @@ const UseStateObject = () => {
     description: "Bio here",
   });
   const changeMessage = () => {
-    setPerson({ ...person, description: "Insta Bio here!" });
+    if (person.description == "Bio here") {
+      setPerson({ ...person, description: "Insta Bio here!" });
+    } else {
+      setPerson({ ...person, description: "Bio here" });
+    }
   };
   return (
     <>
