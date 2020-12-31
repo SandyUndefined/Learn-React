@@ -8,9 +8,19 @@ import React, { useState } from "react";
 const ControlledInputs = () => {
   const [firstName, setfirstName] = useState("");
   const [email, setEmail] = useState("");
+  const [peopele, setPeopele] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Done!");
+    if (firstName && email) {
+      const person = { id: new Date().getTime().toString(), firstName, email };
+      setPeopele((people) => {
+        return [...people, person];
+      });
+      setfirstName("");
+      setEmail("");
+    } else {
+      console.log("not sum=bmitted");
+    }
   };
   return (
     <>
@@ -40,6 +50,15 @@ const ControlledInputs = () => {
             Add People
           </button>
         </form>
+        {peopele.map((person) => {
+          const { id, firstName, email } = person;
+          return (
+            <div className="item" key={id}>
+              <h4>{firstName}</h4>
+              <p>{email}</p>
+            </div>
+          );
+        })}
       </article>
     </>
   );
